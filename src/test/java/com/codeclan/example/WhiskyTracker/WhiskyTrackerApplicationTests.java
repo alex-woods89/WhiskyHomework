@@ -52,6 +52,12 @@ public class WhiskyTrackerApplicationTests {
 		assertEquals("The Rosebank 12 - Flora and Fona", foundWhiskies.get(0).getName());
 	}
 
+	@Test
+	public void canFindWhiskiesAged12(){
+		List<Distillery> foundDistilleries = distilleryRepository.findDistilleriesWithWhiskiesAged12(12);
+		assertEquals(2, foundDistilleries.size());
+	}
+
 
 
 }

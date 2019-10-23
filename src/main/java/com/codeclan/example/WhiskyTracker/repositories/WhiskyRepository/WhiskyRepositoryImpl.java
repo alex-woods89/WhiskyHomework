@@ -25,7 +25,7 @@ public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
 
         try{
             Criteria criteria = session.createCriteria(Whisky.class);
-            criteria.createAlias("distilleries", "distilleryAlias");
+            criteria.createAlias("distillery", "distilleryAlias");
             criteria.add(Restrictions.eq("distilleryAlias.region", regionToFind));
             result = criteria.list();
         }
